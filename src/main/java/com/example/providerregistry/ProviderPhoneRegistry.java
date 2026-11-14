@@ -31,7 +31,7 @@ public final class ProviderPhoneRegistry {
      * @throws NullPointerException если {@code providers} или один из элементов равен {@code null}
      * @throws IllegalArgumentException если повторяются id
      */
-    public void setProviders(List<Provider> providers) {
+    public synchronized void setProviders(List<Provider> providers) {
         Objects.requireNonNull(providers, "providers");
 
         Map<String, ProviderClient> newClients = new HashMap<>();
